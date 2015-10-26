@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import com.epicodus.todolist.R;
 import com.epicodus.todolist.models.Category;
@@ -35,7 +37,7 @@ public class CategoryActivity extends ListActivity {
         }
         mAddTaskButton = (Button) findViewById(R.id.addTaskButton);
         mNewTaskText = (EditText) findViewById(R.id.newTaskText);
-        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mTasks);
+        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, mTasks);
         setListAdapter(mAdapter);
 
         mAddTaskButton.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +47,12 @@ public class CategoryActivity extends ListActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        CheckedTextView task = (CheckedTextView)v;
+        task.setChecked(!task.isChecked());
     }
 
     private void addTask() {
