@@ -18,13 +18,17 @@ public class Task extends Model {
     @Column(name = "description")
     private String mDescription;
 
+    @Column(name = "Category")
+    private Category mCategory;
+
     public Task() {
         super();
     }
 
-    public Task(String description) {
+    public Task(String description, Category category) {
         super();
         mDescription = description;
+        mCategory = category;
     }
 
     public String getDescription() {
@@ -33,6 +37,14 @@ public class Task extends Model {
 
     public void setDescription(String description) {
         mDescription = description;
+    }
+
+    public Category getCategory() {
+        return mCategory;
+    }
+
+    public void setCategory(Category category) {
+        mCategory = category;
     }
 
     public static List<Task> all() {

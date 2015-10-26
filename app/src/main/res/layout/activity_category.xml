@@ -11,7 +11,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Category"
+        android:text="Add Task"
         android:id="@+id/addTaskButton"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
@@ -20,13 +20,13 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/newCategoryText"
+        android:id="@+id/newTaskText"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/addTaskButton"
         android:layout_toStartOf="@+id/addTaskButton"
-        android:hint="New Category"/>
+        android:hint="New Task"/>
 
     <ListView
         android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No categories yet"
+        android:text="No tasks yet"
         android:id="@android:id/empty"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
